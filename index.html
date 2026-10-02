@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jack Behrend | Portfolio</title>
+
+    <style>
+
+        /* =========================
+           GENERAL PAGE SETTINGS
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f5f5f5;
+            color: #171717;
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           HEADER / NAVIGATION
+        ========================== */
+
+        header {
+            background-color: white;
+            border-bottom: 1px solid #dddddd;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1150px;
+            margin: auto;
+            padding: 20px 30px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #cc0033;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #222222;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: #cc0033;
+        }
+
+
+        /* =========================
+           HERO / ABOUT SECTION
+        ========================== */
+
+        .hero {
+            max-width: 1150px;
+            margin: auto;
+            padding: 100px 30px 95px;
+
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .profile {
+            text-align: center;
+        }
+
+
+        /* HEADSHOT */
+
+        .profile-photo {
+            width: 215px;
+            height: 215px;
+
+            display: block;
+            margin: auto;
+
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+
+            border: 5px solid white;
+
+            box-shadow:
+                0 5px 18px rgba(0, 0, 0, 0.15);
+        }
+
+
+        .profile h2 {
+            margin-top: 24px;
+            font-size: 28px;
+        }
+
+        .profile-school {
+            color: #cc0033;
+            font-weight: bold;
+        }
+
+        .profile-class {
+            color: #666666;
+            font-weight: normal;
+            margin-top: 3px;
+        }
+
+
+        /* INTRO */
+
+        .intro-tag {
+            display: inline-block;
+
+            background-color: #f4dfe4;
+            color: #8c1833;
+
+            padding: 7px 15px;
+            border-radius: 20px;
+
+            font-size: 14px;
+            font-weight: bold;
+
+            margin-bottom: 20px;
+        }
+
+        .intro h1 {
+            font-size: 48px;
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
+
+        .intro p {
+            font-size: 19px;
+            color: #555555;
+            max-width: 760px;
+        }
+
+
+        /* BUTTONS */
+
+        .buttons {
+            margin-top: 32px;
+
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .button {
+            display: inline-block;
+
+            padding: 12px 23px;
+
+            border-radius: 25px;
+            border: 1px solid #cccccc;
+
+            text-decoration: none;
+            font-weight: bold;
+
+            background-color: white;
+            color: #222222;
+
+            transition: 0.2s ease;
+        }
+
+        .button:hover {
+            background-color: #cc0033;
+            border-color: #cc0033;
+            color: white;
+        }
+
+
+        /* =========================
+           GENERAL SECTIONS
+        ========================== */
+
+        section {
+            padding: 80px 30px;
+        }
+
+        .container {
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .section-description {
+            max-width: 780px;
+
+            color: #666666;
+            font-size: 17px;
+
+            margin-bottom: 40px;
+        }
+
+
+        /* =========================
+           SKILLS SECTION
+        ========================== */
+
+        .skills-section {
+            background-color: white;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 22px;
+        }
+
+        .skill-card {
+            background-color: #f7f7f7;
+
+            padding: 28px;
+
+            border-radius: 12px;
+            border: 1px solid #e2e2e2;
+        }
+
+        .skill-card h3 {
+            color: #cc0033;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .skill-card p {
+            color: #555555;
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================== */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .project-card {
+            background-color: white;
+
+            border-radius: 12px;
+            border: 1px solid #dddddd;
+
+            padding: 30px;
+
+            box-shadow:
+                0 4px 12px rgba(0, 0, 0, 0.05);
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-label {
+            color: #cc0033;
+
+            font-size: 13px;
+            font-weight: bold;
+
+            text-transform: uppercase;
+        }
+
+        .project-card h3 {
+            font-size: 22px;
+
+            margin-top: 9px;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: #5b5b5b;
+
+            margin-bottom: 22px;
+
+            flex-grow: 1;
+        }
+
+        .project-card a {
+            color: #cc0033;
+
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .project-card a:hover {
+            text-decoration: underline;
+        }
+
+        .project-reference {
+            color: #777777;
+
+            font-size: 14px;
+            font-style: italic;
+        }
+
+
+        /* =========================
+           CONTACT SECTION
+        ========================== */
+
+        .contact-section {
+            background-color: white;
+            text-align: center;
+        }
+
+        .contact-section p {
+            color: #666666;
+
+            max-width: 650px;
+            margin: 0 auto 25px;
+        }
+
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            gap: 14px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            background-color: #171717;
+            color: white;
+
+            text-align: center;
+
+            padding: 38px 20px;
+        }
+
+        footer h3 {
+            margin-bottom: 5px;
+        }
+
+        footer p {
+            color: #cccccc;
+        }
+
+
+        /* =========================
+           MOBILE DISPLAY
+        ========================== */
+
+        @media (max-width: 800px) {
+
+            .hero {
+                grid-template-columns: 1fr;
+
+                text-align: center;
+
+                padding-top: 60px;
+            }
+
+            .intro h1 {
+                font-size: 38px;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 14px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================== -->
+
+<header>
+
+    <nav>
+
+        <div class="logo">
+            <span>RBS</span> | Jack's Portfolio
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="#about">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="#skills">
+                    Skills
+                </a>
+            </li>
+
+            <li>
+                <a href="#projects">
+                    Projects
+                </a>
+            </li>
+
+            <li>
+                <a href="#contact">
+                    Contact
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+
+<main>
+
+
+<!-- =========================
+     ABOUT / PERSONAL STATEMENT
+========================== -->
+
+<section class="hero" id="about">
+
+
+    <div class="profile">
+
+        <!--
+        IMPORTANT:
+        Your GitHub repository must contain
+        an image named exactly:
+
+        headshot.jpg
+        -->
+
+        <img
+            src="headshot.jpg"
+            alt="Headshot of Jack Behrend"
+            class="profile-photo"
+        >
+
+
+        <h2>
+            Jack Behrend
+        </h2>
+
+
+        <p class="profile-school">
+            Rutgers Business School
+        </p>
+
+
+        <p class="profile-class">
+            Finance | Class of 2027
+        </p>
+
+    </div>
+
+
+
+    <div class="intro">
+
+
+        <div class="intro-tag">
+            Finance • Analytics • Relationship Management
+        </div>
+
+
+        <h1>
+            Building relationships.
+            Analyzing opportunities.
+            Creating value.
+        </h1>
+
+
+        <!-- REQUIRED ONE-SENTENCE PERSONAL STATEMENT -->
+
+        <p>
+            Finance student at Rutgers Business School with experience in relationship management, financial services, and business analysis, interested in applying analytical and interpersonal skills to solve real-world business problems.
+        </p>
+
+
+
+        <div class="buttons">
+
+
+            <!-- LINKEDIN -->
+
+            <a
+                class="button"
+                href="https://www.linkedin.com/in/jack-behrend/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                LinkedIn
+            </a>
+
+
+            <!-- EMAIL -->
+
+            <a
+                class="button"
+                href="mailto:Jacktbehrend@gmail.com"
+            >
+                Email Me
+            </a>
+
+
+            <!-- PROJECTS -->
+
+            <a
+                class="button"
+                href="#projects"
+            >
+                View Projects
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     SKILLS
+========================== -->
+
+<section
+    class="skills-section"
+    id="skills"
+>
+
+    <div class="container">
+
+
+        <h2 class="section-title">
+            Skills
+        </h2>
+
+
+        <p class="section-description">
+            A combination of financial, analytical, technical, and interpersonal skills developed through professional experience, leadership, and coursework.
+        </p>
+
+
+
+        <div class="skills-grid">
+
+
+            <!-- SKILL GROUP 1 -->
+
+            <div class="skill-card">
+
+                <h3>
+                    Finance & Business
+                </h3>
+
+                <p>
+                    Financial Analysis • Relationship Management • Financial Services • Business Strategy
+                </p>
+
+            </div>
+
+
+
+            <!-- SKILL GROUP 2 -->
+
+            <div class="skill-card">
+
+                <h3>
+                    Data & Technology
+                </h3>
+
+                <p>
+                    Microsoft Excel • SQL • MySQL • Tableau • Data Analysis
+                </p>
+
+            </div>
+
+
+
+            <!-- SKILL GROUP 3 -->
+
+            <div class="skill-card">
+
+                <h3>
+                    Leadership & Professional
+                </h3>
+
+                <p>
+                    Communication • Leadership • Presentations • Problem Solving • Teamwork • Generative AI
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PROJECTS
+========================== -->
+
+<section id="projects">
+
+    <div class="container">
+
+
+        <h2 class="section-title">
+            Featured Projects
+        </h2>
+
+
+        <p class="section-description">
+            Selected academic, leadership, and professional experiences demonstrating technical ability, initiative, and business problem solving.
+        </p>
+
+
+
+        <div class="projects-grid">
+
+
+            <!-- =================
+                 PROJECT 1
+            ================== -->
+
+            <div class="project-card">
+
+
+                <span class="project-label">
+                    Database Design
+                </span>
+
+
+                <h3>
+                    Paws & Care Relational Database
+                </h3>
+
+
+                <p>
+                    Designed and normalized a relational database using Excel and MySQL Workbench. Developed an EER model, established primary and foreign key relationships, and created an executable SQL database structure.
+                </p>
+
+
+                <span class="project-reference">
+                    Rutgers Business School Academic Project
+                </span>
+
+            </div>
+
+
+
+            <!-- =================
+                 PROJECT 2
+            ================== -->
+
+            <div class="project-card">
+
+
+                <span class="project-label">
+                    Leadership & Entrepreneurship
+                </span>
+
+
+                <h3>
+                    RVCC Business Club
+                </h3>
+
+
+                <p>
+                    Co-founded and served as President of the Raritan Valley Community College Business Club, helping establish an organization focused on connecting students interested in business, professional development, and career opportunities.
+                </p>
+
+
+                <a
+                    href="https://www.instagram.com/rvcc_businessclub/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    View Business Club →
+                </a>
+
+            </div>
+
+
+
+            <!-- =================
+                 PROJECT 3
+            ================== -->
+
+            <div class="project-card">
+
+
+                <span class="project-label">
+                    Professional Experience
+                </span>
+
+
+                <h3>
+                    Relationship Management Resource Hub
+                </h3>
+
+
+                <p>
+                    Contributed to the development and consolidation of a centralized SharePoint resource hub during my internship with R&T Deposit Solutions, helping improve the organization and accessibility of resources used by the Relationship Management team.
+                </p>
+
+
+                <a
+                    href="https://www.linkedin.com/in/jack-behrend/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    View Professional Experience →
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+========================== -->
+
+<section
+    class="contact-section"
+    id="contact"
+>
+
+    <div class="container">
+
+
+        <h2 class="section-title">
+            Let's Connect
+        </h2>
+
+
+        <p>
+            Thank you for visiting my portfolio. Feel free to connect with me on LinkedIn or reach out by email.
+        </p>
+
+
+
+        <div class="contact-buttons">
+
+
+            <a
+                class="button"
+                href="mailto:Jacktbehrend@gmail.com"
+            >
+                Email Me
+            </a>
+
+
+            <a
+                class="button"
+                href="https://www.linkedin.com/in/jack-behrend/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                LinkedIn
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================
+     FOOTER
+========================== -->
+
+<footer>
+
+    <h3>
+        Jack Behrend
+    </h3>
+
+    <p>
+        Rutgers Business School • Finance • Class of 2027
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
